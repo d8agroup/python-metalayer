@@ -1,0 +1,29 @@
+Python client for the MetaLayer API
+===================================
+
+A simple Python client for the MetaLayer API. Be sure to check out the [official docs] (http://apis.metalayer.com/docs.html) prior to using.
+
+Usage
+-----
+    import metalayer
+
+    client = metalayer.Client()
+
+    # Run sentiment analysis over a string
+    client.data.sentiment("I love kittens")
+
+    # Retrieve keywords from a string
+    client.data.tagging("Kittens and puppies and bears")
+
+    # Extract geographic information from a string
+    client.data.locations("Puppies in Bozeman are the best")
+
+    # Run the three preceding endpoints over a string in one shot
+    client.data.bundle("The best kittens are from MT")
+    # Extract color information from an image
+    with open('/path/to/file', 'rb') as f:
+        client.data.color(f)
+
+    # Generate a histogram of color distribution from an image
+    with open('/path/to/file', 'rb') as f:
+        client.data.histogram(f)
